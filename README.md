@@ -12,17 +12,17 @@ Alternative way to setup (for cyclic) using turborepro and npm workspaces
 │ └── server
 └── packages
 
-create app folder
+## create app folder
 
-## client
+## create client in app
 
 create client folder by npm create vite
 
-## Server
+## create server in app
 
 - important to create the `dev` and `start` script
 
-enter server
+- enter server
 
 - add this to package.json
   "scripts": {
@@ -63,3 +63,36 @@ turbo runs on concept workspaces
   ]
 
 - touch turbo.json
+
+- add to turbo.json
+  {
+  "$schema": "https://turborepo.org/schema.json",
+  "pipeline": {
+  "dev": {},
+  "build": {
+  "dependsOn": ["^build"],
+  "outputs": ["dist/**"]
+  },
+  "test": {
+  "dependsOn": ["build"],
+  "outputs": [],
+  "inputs": ["src/**/*.jsx", "src/**/*.js", "test/**/*.js", "test/**/*.jsx"]
+  },
+  "lint": {
+  "outputs": []
+  },
+  "deploy": {
+  "dependsOn": ["build", "test", "lint"],
+  "outputs": []
+  }
+  }
+  }
+
+- touch .gitignore
+- add content to .gitignore file
+- git init
+- git add -A
+- git commit -m 'message'
+
+- npx turbo dev
+- npx turbo build
