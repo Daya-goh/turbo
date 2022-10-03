@@ -1,0 +1,19 @@
+{
+  "name": "w11d1",
+  "version": "1.0.0",
+  "description": "Alternative way to setup (for cyclic) using turborepro and npm workspaces",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "turbo": "^1.5.5"
+  },
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ]
+}
