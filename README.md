@@ -36,8 +36,7 @@ create client folder by npm create vite
   const app = express();
   const port = process.env.PORT ?? 3000;
 
-//\* ?? to fill in later
-app.use(express.static("??"));
+app.use(express.static("../client/dist"));
 
 app.get("/", (req, res) => {
 res.send("Hello World!");
@@ -96,3 +95,11 @@ turbo runs on concept workspaces
 
 - npx turbo dev
 - npx turbo build
+
+## cyclic
+
+- git clone
+- npm install
+- npm run build
+- npm run prune
+- npm run start
