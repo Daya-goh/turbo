@@ -2,7 +2,7 @@
   "name": "turbo",
   "version": "1.0.0",
   "description": "Alternative way to setup (for cyclic) using turborepo & npm workspaces",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "build": "turbo build",
     "start": "cd/app/server && npm run start"
